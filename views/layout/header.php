@@ -191,6 +191,11 @@ if (!isset($baseUrl)) {
                             <span>Panduan</span>
                         </a>
 
+                        <a href="landing" class="px-3 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1.5 text-emerald-100 hover:bg-white/10 hover:text-white" title="Landing Page & Download APK">
+                            <i class="fa-solid fa-earth-asia"></i>
+                            <span>Landing Page</span>
+                        </a>
+
                         <!-- Tombol Icon Info ChatTutor -->
                         <button type="button" onclick="openModalInfoChatTutor()" class="px-3 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-1.5 bg-amber-400/25 text-amber-300 hover:bg-amber-400/35 border border-amber-300/40 shadow-xs" title="Tentang ChatTutor, Doa Hafidz, & Lisensi Gratis">
                             <i class="fa-solid fa-circle-info text-amber-300 text-base"></i>
@@ -213,6 +218,11 @@ if (!isset($baseUrl)) {
                         <a href="panduan" class="px-3 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1.5 <?= $activeNav === 'panduan' ? 'bg-white/20 text-white shadow-sm' : 'text-emerald-100 hover:bg-white/10 hover:text-white' ?>" title="Buku Panduan Lengkap">
                             <i class="fa-solid fa-book-open"></i>
                             <span>Panduan</span>
+                        </a>
+
+                        <a href="landing" class="px-3 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1.5 text-emerald-100 hover:bg-white/10 hover:text-white" title="Landing Page & Download APK">
+                            <i class="fa-solid fa-earth-asia"></i>
+                            <span>Landing Page</span>
                         </a>
 
                         <!-- Tombol Icon Info ChatTutor -->

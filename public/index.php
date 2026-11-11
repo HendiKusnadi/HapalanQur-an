@@ -122,13 +122,37 @@ $page = match ($route) {
     'rekap', 'rekapitulasi' => 'rekap',
     'pengaturan', 'settings' => 'pengaturan',
     'panduan', 'buku-panduan' => 'panduan',
+    'landing', 'landingpage', 'beranda', 'home' => 'landing',
     'login' => 'login',
     'logout' => 'logout',
     'cetak-rapor', 'cetak_rapor' => 'cetak_rapor',
     'cetak-laporan', 'cetak_laporan_pdf', 'cetak-laporan-pdf' => 'cetak_laporan_pdf',
     'backup-db', 'download-db' => 'download_db',
+    'download-apk' => 'download_apk',
     default => '404',
 };
+
+// Handle Landing Page
+if ($page === 'landing') {
+    $landingFile = $baseDir . '/landingpage/index.html';
+    if (file_exists($landingFile)) {
+        header('Content-Type: text/html; charset=utf-8');
+        readfile($landingFile);
+        exit;
+    }
+}
+
+// Handle Download APK Langsung dari Web Server
+if ($page === 'download_apk' || $route === 'downloads/SIM-Tahfidz-Quran.apk') {
+    $apkFile = $baseDir . '/SIM-Tahfidz-Quran.apk';
+    if (file_exists($apkFile)) {
+        header('Content-Type: application/vnd.android.package-archive');
+        header('Content-Disposition: attachment; filename="SIM-Tahfidz-Quran.apk"');
+        header('Content-Length: ' . filesize($apkFile));
+        readfile($apkFile);
+        exit;
+    }
+}
 
 // Handle Logout
 if ($page === 'logout') {

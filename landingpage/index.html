@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIM Tahfidz Al-Qur'an - Aplikasi Menghafal & Setoran Mandiri Gratis dari ChatTutor</title>
+    
+    <link rel="icon" type="image/png" href="icons/icon-192.png">
+    <meta name="description" content="Aplikasi SIM Tahfidz Al-Qur'an terlengkap: Metode Tikrar berulang, otomatisasi setoran sabaq & murojaah, rapor resmi 30 juz, database mandiri di HP, 100% gratis wakaf dari ChatTutor.">
+    <meta name="keywords" content="SIM Tahfidz, Aplikasi Tahfidz Quran, Tikrar Al-Quran, Setoran Santri, Murojaah Sabqi Manzil, ChatTutor, APK Tahfidz Offline">
+    <meta name="theme-color" content="#065f46">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            50: '#ecfdf5', 100: '#d1fae5', 200: '#a7f3d0', 300: '#6ee7b7',
+                            400: '#34d399', 500: '#10b981', 600: '#059669', 700: '#047857',
+                            800: '#065f46', 900: '#064e3b', 950: '#022c22'
+                        },
+                        amber: {
+                            50: '#fffbeb', 100: '#fef3c7', 200: '#fde68a', 300: '#fcd34d',
+                            400: '#fbbf24', 500: '#f59e0b', 600: '#d97706', 700: '#b45309',
+                            800: '#92400e', 900: '#78350f', 950: '#451a03'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+                        quran: ['Amiri', 'serif']
+                    },
+                    boxShadow: {
+                        'glow': '0 0 50px -12px rgba(16, 185, 129, 0.35)',
+                        'gold-glow': '0 0 40px -10px rgba(245, 158, 11, 0.35)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome 6 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts: Plus Jakarta Sans & Amiri -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-quran { font-family: 'Amiri', serif; }
+        
+        /* Custom Phone & Mockup Shine Effects */
+        .glass-header {
+            background: rgba(6, 78, 59, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .phone-frame {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35), 0 0 0 10px #1e293b, 0 0 0 12px #334155;
+        }
+        .laptop-base {
+            background: linear-gradient(180deg, #94a3b8 0%, #cbd5e1 50%, #64748b 100%);
+        }
+        .screen-scroll::-webkit-scrollbar { width: 4px; }
+        .screen-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased overflow-x-hidden selection:bg-emerald-600 selection:text-white">
+
+    <!-- ============================================================== -->
+    <!-- TOP STICKY NAVBAR                                              -->
+    <!-- ============================================================== -->
+    <nav class="sticky top-0 z-50 glass-header border-b border-emerald-700/60 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                
+                <!-- Logo & Brand -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-tr from-amber-400 to-amber-200 text-emerald-950 flex items-center justify-center text-xl shadow-lg group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-book-quran"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-white font-extrabold text-base sm:text-lg tracking-tight">SIM Tahfidz Qur'an</span>
+                            <span class="px-2 py-0.5 rounded-full text-[10px] font-black bg-amber-400 text-amber-950 uppercase tracking-wider">100% Gratis</span>
+                        </div>
+                        <p class="text-[11px] text-emerald-200 font-medium">Dakwah Digital by ChatTutor.id</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <div class="hidden md:flex items-center space-x-7 text-xs lg:text-sm font-semibold text-emerald-100">
+                    <a href="#fitur" class="hover:text-amber-300 transition-colors">Fitur Unggulan</a>
+                    <a href="#manfaat" class="hover:text-amber-300 transition-colors">Manfaat</a>
+                    <a href="#mockup-showcase" class="hover:text-amber-300 transition-colors">Tampilan HP & Laptop</a>
+                    <a href="#trial-hafalan" class="text-amber-300 hover:text-amber-200 flex items-center gap-1.5 transition-colors font-bold">
+                        <i class="fa-solid fa-play-circle animate-pulse"></i> Coba Trial Langsung
+                    </a>
+                    <a href="#download" class="hover:text-amber-300 transition-colors">Download Gratis</a>
+                    <a href="#lisensi" class="hover:text-amber-300 transition-colors">Lisensi & Kontak</a>
+                </div>
+
+                <!-- Action CTA Header -->
+                <div class="flex items-center gap-2.5">
+                    <a href="#download" class="px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-emerald-950 font-extrabold text-xs sm:text-sm shadow-md hover:shadow-gold-glow active:scale-95 transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-download"></i>
+                        <span>Download APK</span>
+                    </a>
+                    <!-- Mobile Hamburger -->
+                    <button type="button" onclick="toggleMobileNav()" class="md:hidden p-2 text-emerald-200 hover:text-white text-lg">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-emerald-900 border-t border-emerald-700/80 px-4 pt-3 pb-5 space-y-3">
+            <a href="#fitur" onclick="toggleMobileNav()" class="block text-emerald-100 font-medium py-1">Fitur Unggulan</a>
+            <a href="#manfaat" onclick="toggleMobileNav()" class="block text-emerald-100 font-medium py-1">Manfaat</a>
+            <a href="#mockup-showcase" onclick="toggleMobileNav()" class="block text-emerald-100 font-medium py-1">Tampilan HP & Laptop</a>
+            <a href="#trial-hafalan" onclick="toggleMobileNav()" class="block text-amber-300 font-bold py-1">⚡ Coba Trial Hafalan (Tanpa Login)</a>
+            <a href="#download" onclick="toggleMobileNav()" class="block text-emerald-100 font-medium py-1">Download Gratis APK & PC</a>
+            <a href="#lisensi" onclick="toggleMobileNav()" class="block text-emerald-100 font-medium py-1">Lisensi & Doa Santri</a>
+        </div>
+    </nav>
+
+    <!-- ============================================================== -->
+    <!-- HERO SECTION                                                   -->
+    <!-- ============================================================== -->
+    <header class="relative bg-gradient-to-b from-emerald-900 via-emerald-800 to-emerald-950 text-white pt-12 pb-24 lg:pt-20 lg:pb-36 overflow-hidden">
+        
+        <!-- Decorative Background Glows -->
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/2 -right-40 w-96 h-96 bg-amber-400/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-4xl mx-auto space-y-6">
+                
+                <!-- Badge Atas -->
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-700/60 border border-emerald-500/40 text-emerald-200 text-xs sm:text-sm font-semibold backdrop-blur shadow-inner">
+                    <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+                    <span>Aplikasi SIM Tahfidz Al-Qur'an Terlengkap 100% Gratis</span>
+                    <span class="bg-amber-400 text-amber-950 text-[10px] font-black px-2 py-0.5 rounded-full">OFFLINE</span>
+                </div>
+
+                <!-- Main Headline -->
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight sm:leading-tight">
+                    Revolusi Menghafal Al-Qur'an:
+                    <span class="block bg-gradient-to-r from-amber-300 via-amber-200 to-emerald-200 bg-clip-text text-transparent">
+                        Metode Tikrar & Setoran Cerdas Otomatis
+                    </span>
+                </h1>
+
+                <!-- Subheadline -->
+                <p class="text-slate-200 text-base sm:text-xl font-normal leading-relaxed max-w-3xl mx-auto">
+                    Kombinasi sempurna antara <b>Player Hafalan Santri</b> (Tikrar multi-qari & uji hafalan blind test) dan <b>Sistem Backend Ustadz</b> (penghitung capaian halaman otomatis, murojaah Sabqi-Manzil, visual 30 juz, dan rapor resmi).
+                </p>
+
+                <!-- Value Highlights -->
+                <div class="flex flex-wrap justify-center gap-3 sm:gap-4 pt-2 text-xs sm:text-sm font-semibold text-emerald-100">
+                    <div class="flex items-center gap-2 bg-white/10 backdrop-blur px-3.5 py-1.5 rounded-xl border border-white/10">
+                        <i class="fa-solid fa-circle-check text-amber-400"></i>
+                        <span>Bisa di HP Android (APK) & Laptop (PC)</span>
+                    </div>
+                    <div class="flex items-center gap-2 bg-white/10 backdrop-blur px-3.5 py-1.5 rounded-xl border border-white/10">
+                        <i class="fa-solid fa-circle-check text-amber-400"></i>
+                        <span>Database Mandiri Tiap HP (100% Offline)</span>
+                    </div>
+                    <div class="flex items-center gap-2 bg-white/10 backdrop-blur px-3.5 py-1.5 rounded-xl border border-white/10">
+                        <i class="fa-solid fa-circle-check text-amber-400"></i>
+                        <span>Tanpa Biaya / Tanpa Sewa Server</span>
+                    </div>
+                </div>
+
+                <!-- Call to Action Buttons -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-4">
+                    <a href="#download" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-300 hover:to-amber-500 text-emerald-950 font-black text-base shadow-xl hover:shadow-gold-glow active:scale-95 transition-all flex items-center justify-center gap-3">
+                        <i class="fa-solid fa-download text-lg"></i>
+                        <span>Download APK Android Gratis</span>
+                    </a>
+                    <a href="#trial-hafalan" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-emerald-700/80 hover:bg-emerald-600/90 border border-emerald-400/30 text-white font-extrabold text-base shadow-lg active:scale-95 transition-all flex items-center justify-center gap-3">
+                        <i class="fa-solid fa-play text-amber-300"></i>
+                        <span>Coba Trial Hafalan Sekarang</span>
+                    </a>
+                </div>
+
+                <p class="text-xs text-emerald-300 italic">
+                    * Murni 100% Gratis & Bebas Digunakan oleh Pesantren, Rumah Tahfidz, Sekolah Islam, dan Santri.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================================== -->
+    <!-- BANNER PERINGATAN KERAS & LISENSI WAKAF                        -->
+    <!-- ============================================================== -->
+    <section id="lisensi" class="relative -mt-12 z-20 max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="rounded-3xl bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 p-1 shadow-2xl">
+            <div class="rounded-[22px] bg-emerald-950 text-white p-6 sm:p-8 space-y-4 text-center sm:text-left sm:flex sm:items-center sm:justify-between sm:gap-8">
+                
+                <div class="space-y-2">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-600 text-white font-black text-xs uppercase tracking-wider shadow-sm">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        <span>Peringatan Keras Hak Cipta & Lisensi Wakaf</span>
+                    </div>
+                    <h2 class="text-xl sm:text-2xl font-black text-amber-300">
+                        DILARANG KERAS MEMPERJUALBELIKAN APLIKASI INI!
+                    </h2>
+                    <p class="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                        Aplikasi SIM Tahfidz Al-Qur'an ini <b>MURNI 100% GRATIS DARI CHATTUTOR (WAKAF DIGITAL)</b> sebagai amal jariyah dan sarana dakwah menjaga kalamullah. Tidak boleh diperjualbelikan atau dikomersialkan oleh siapa pun dalam bentuk apa pun.
+                    </p>
+                    <p class="text-xs text-amber-200 font-medium">
+                        🤲 <i>"Doa terbaik semoga seluruh santri penghafal Al-Qur'an menjadi Hafidz & Hafidzah yang mutqin, berakhlak mulia, cerdas, serta istiqomah. Lanjutkan perjuangan mulia ini!"</i>
+                    </p>
+                </div>
+
+                <!-- Kontak Button Box -->
+                <div class="shrink-0 pt-2 sm:pt-0">
+                    <a href="https://wa.me/628975775046?text=Halo%20ChatTutor,%20saya%20pengguna%20Aplikasi%20SIM%20Tahfidz%20Quran" target="_blank" class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-sm shadow-lg active:scale-95 transition-all">
+                        <i class="fa-brands fa-whatsapp text-lg text-emerald-200"></i>
+                        <span>Hubungi Kami: 0897 5775 046</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- SHOWCASE MOCKUP INTERAKTIF: LAPTOP & HP DENGAN SLIDER          -->
+    <!-- ============================================================== -->
+    <section id="mockup-showcase" class="py-20 lg:py-28 bg-slate-100 border-b border-slate-200 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-3">
+                <span class="text-xs font-black text-emerald-700 bg-emerald-100 px-3.5 py-1 rounded-full uppercase tracking-wider">
+                    Showcase Tampilan Nyata
+                </span>
+                <h2 class="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight">
+                    Tampilan Sempurna di Laptop Maupun Layar HP Anda
+                </h2>
+                <p class="text-slate-600 text-sm sm:text-base">
+                    Gunakan versi desktop di laptop pesantren untuk administrasi lengkap, atau gunakan versi APK di HP untuk fleksibilitas santri dan ustadz di mana saja.
+                </p>
+            </div>
+
+            <!-- DUAL SHOWCASE GRID -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- ========================================== -->
+                <!-- SISI KIRI: MOCKUP LAPTOP (DESKTOP VERSION)  -->
+                <!-- ========================================== -->
+                <div class="lg:col-span-7 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-base sm:text-lg font-extrabold text-slate-800 flex items-center gap-2">
+                            <i class="fa-solid fa-laptop text-emerald-600"></i>
+                            <span>Versi Laptop / Komputer (Admin & Ustadz)</span>
+                        </h3>
+                        <span class="text-xs font-bold text-slate-500 bg-slate-200 px-2.5 py-0.5 rounded-md">PHP 8.3 + SQLite</span>
+                    </div>
+
+                    <!-- Interactive Tabs Laptop Screen -->
+                    <div class="flex flex-wrap gap-2 text-xs font-bold">
+                        <button type="button" onclick="switchLaptopTab('tab-dashboard')" id="btn-tab-dashboard" class="laptop-tab-btn active px-3.5 py-1.5 rounded-lg bg-emerald-800 text-white shadow-sm">
+                            1. Visual 30 Juz
+                        </button>
+                        <button type="button" onclick="switchLaptopTab('tab-setoran')" id="btn-tab-setoran" class="laptop-tab-btn px-3.5 py-1.5 rounded-lg bg-white text-slate-600 border border-slate-200 hover:bg-slate-50">
+                            2. Input Setoran Otomatis
+                        </button>
+                        <button type="button" onclick="switchLaptopTab('tab-rapor')" id="btn-tab-rapor" class="laptop-tab-btn px-3.5 py-1.5 rounded-lg bg-white text-slate-600 border border-slate-200 hover:bg-slate-50">
+                            3. Cetak Rapor Resmi A4
+                        </button>
+                    </div>
+
+                    <!-- Realistic Laptop Frame -->
+                    <div class="relative mx-auto w-full max-w-2xl">
+                        <!-- Laptop Lid / Screen -->
+                        <div class="bg-slate-900 rounded-t-2xl p-3 sm:p-4 shadow-2xl border-4 border-slate-800">
+                            <!-- Camera dot -->
+                            <div class="w-2 h-2 rounded-full bg-slate-700 mx-auto mb-2.5"></div>
+                            
+                            <!-- Screen Content Container -->
+                            <div class="bg-white rounded-lg overflow-hidden border border-slate-300 h-80 sm:h-96 screen-scroll overflow-y-auto text-left relative">
+                                
+                                <!-- SCREEN TAB 1: VISUAL 30 JUZ -->
+                                <div id="laptop-screen-dashboard" class="laptop-screen block p-4 space-y-4">
+                                    <div class="flex items-center justify-between border-b pb-3">
+                                        <div>
+                                            <h4 class="font-black text-sm text-slate-900">Dashboard Evaluasi Tahfidz</h4>
+                                            <p class="text-[11px] text-slate-500">Pemetaan Mutqin 30 Juz Santri</p>
+                                        </div>
+                                        <span class="px-2 py-1 rounded bg-emerald-100 text-emerald-800 font-bold text-xs">Total Santri: 48</span>
+                                    </div>
+                                    <!-- Mini 30 Juz Grid Preview -->
+                                    <div class="space-y-1.5">
+                                        <p class="text-xs font-bold text-slate-700">Checklist Kemajuan 30 Juz:</p>
+                                        <div class="grid grid-cols-10 gap-1.5 text-center text-[10px] font-extrabold">
+                                            <div class="p-2 rounded bg-emerald-600 text-white shadow-xs">Juz 30 ✓</div>
+                                            <div class="p-2 rounded bg-emerald-600 text-white shadow-xs">Juz 29 ✓</div>
+                                            <div class="p-2 rounded bg-emerald-500 text-white shadow-xs">Juz 28 ✓</div>
+                                            <div class="p-2 rounded bg-amber-400 text-amber-950 font-black shadow-xs">Juz 27 ⏳</div>
+                                            <div class="p-2 rounded bg-slate-100 text-slate-400 border">Juz 26</div>
+                                            <div class="p-2 rounded bg-slate-100 text-slate-400 border">Juz 25</div>
+                                            <div class="p-2 rounded bg-slate-100 text-slate-400 border">Juz 24</div>
+                                            <div class="p-2 rounded bg-slate-100 text-slate-400 border">Juz 23</div>
+                                            <div class="p-2 rounded bg-slate-100 text-slate-400 border">Juz 22</div>
+                                            <div class="p-2 rounded bg-slate-100 text-slate-400 border">Juz 21</div>
+                                        </div>
+                                    </div>
+                                    <!-- Mini Table -->
+                                    <div class="border rounded-xl overflow-hidden text-xs">
+                                        <table class="w-full text-left">
+                                            <thead class="bg-slate-50 font-bold text-slate-700 border-b">
+                                                <tr>
+                                                    <th class="p-2">Santri</th>
+                                                    <th class="p-2">Posisi Terakhir</th>
+                                                    <th class="p-2">Capaian</th>
+                                                    <th class="p-2">Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="divide-y text-[11px]">
+                                                <tr>
+                                                    <td class="p-2 font-bold text-slate-900">M. Zaky Al-Farisi</td>
+                                                    <td class="p-2">An-Naba' : 1-40</td>
+                                                    <td class="p-2 font-bold text-emerald-700">1.24 Juz (25 Hal)</td>
+                                                    <td class="p-2"><span class="px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold">Lulus Mumtaz</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="p-2 font-bold text-slate-900">Ahmad Raihan P.</td>
+                                                    <td class="p-2">Al-Muthaffifin : 1-36</td>
+                                                    <td class="p-2 font-bold text-emerald-700">0.70 Juz (14 Hal)</td>
+                                                    <td class="p-2"><span class="px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold">Lulus Jayyid</span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <!-- SCREEN TAB 2: INPUT SETORAN OTOMATIS -->
+                                <div id="laptop-screen-setoran" class="laptop-screen hidden p-4 space-y-3">
+                                    <div class="flex items-center justify-between border-b pb-2">
+                                        <h4 class="font-black text-sm text-slate-900 flex items-center gap-1.5">
+                                            <i class="fa-solid fa-plus-circle text-emerald-600"></i> Form Setoran Santri
+                                        </h4>
+                                        <span class="text-[10px] bg-amber-400 text-amber-950 font-black px-2 py-0.5 rounded">Rekomendasi Otomatis</span>
+                                    </div>
+                                    <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-2.5 text-xs text-emerald-900">
+                                        <b>🎯 Target Rekomendasi Berikutnya:</b> QS. An-Nazi'at Ayat 1 s/d 15 (Halaman 583).
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-2 text-xs">
+                                        <div class="p-2 rounded bg-slate-50 border">
+                                            <span class="text-slate-500 block text-[10px]">Surah Mulai</span>
+                                            <span class="font-bold">79. An-Nazi'at (Ayat 1)</span>
+                                        </div>
+                                        <div class="p-2 rounded bg-slate-50 border">
+                                            <span class="text-slate-500 block text-[10px]">Surah Selesai</span>
+                                            <span class="font-bold">79. An-Nazi'at (Ayat 15)</span>
+                                        </div>
+                                    </div>
+                                    <div class="p-2.5 rounded-xl bg-slate-900 text-white text-xs flex items-center justify-between font-bold">
+                                        <span>Hitungan Otomatis Sistem:</span>
+                                        <span class="text-amber-400 font-extrabold">+ 1.0 Halaman (Bertambah Maju)</span>
+                                    </div>
+                                    <div class="flex gap-2">
+                                        <button class="w-full py-2 rounded-lg bg-emerald-600 text-white font-bold text-xs shadow-sm">
+                                            ✓ Simpan & Tambah Otomatis
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- SCREEN TAB 3: CETAK RAPOR RESMI A4 -->
+                                <div id="laptop-screen-rapor" class="laptop-screen hidden p-4 space-y-3 text-center">
+                                    <div class="border-2 border-dashed border-slate-300 rounded-2xl p-4 bg-slate-50 space-y-2">
+                                        <div class="w-8 h-8 rounded-full bg-emerald-700 text-white flex items-center justify-center mx-auto text-sm">
+                                            <i class="fa-solid fa-print"></i>
+                                        </div>
+                                        <h4 class="font-black text-sm text-slate-800">Cetak Rapor Tahfidz Standar A4 Resmi</h4>
+                                        <p class="text-xs text-slate-500 max-w-sm mx-auto">
+                                            Format siap cetak lengkap dengan Kop Surat Lembaga, Grafik Capaian, Matriks 30 Juz, Nilai Tajwid, serta Kolom Tanda Tangan Musyrif & Pimpinan.
+                                        </p>
+                                        <div class="inline-flex gap-2 pt-2">
+                                            <span class="px-2.5 py-1 rounded bg-white border text-[11px] font-bold text-slate-700 shadow-xs">Format Cetak A4</span>
+                                            <span class="px-2.5 py-1 rounded bg-white border text-[11px] font-bold text-slate-700 shadow-xs">Export Excel (.CSV)</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- Laptop Base / Keyboard chassis -->
+                        <div class="laptop-base h-4 sm:h-5 rounded-b-xl max-w-[104%] -ml-[2%] relative shadow-xl">
+                            <div class="w-16 h-1.5 bg-slate-400 rounded-b-md mx-auto"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================================== -->
+                <!-- SISI KANAN: MOCKUP SMARTPHONE (HP APK)     -->
+                <!-- ========================================== -->
+                <div class="lg:col-span-5 space-y-4 text-center">
+                    <div class="flex items-center justify-between text-left">
+                        <div>
+                            <h3 class="text-base sm:text-lg font-extrabold text-slate-800 flex items-center gap-2">
+                                <i class="fa-solid fa-mobile-screen text-emerald-600"></i>
+                                <span>Versi HP Android (APK Mandiri)</span>
+                            </h3>
+                            <p class="text-xs text-slate-500">Database Lokal Tersendiri di Memori HP</p>
+                        </div>
+                        <!-- Slider Play / Pause -->
+                        <button type="button" onclick="toggleSliderAutoplay()" id="btn-toggle-slider" class="p-1.5 rounded-lg bg-emerald-100 text-emerald-800 text-xs font-bold hover:bg-emerald-200" title="Jeda / Lanjutkan Slider">
+                            <i id="slider-play-icon" class="fa-solid fa-pause"></i>
+                        </button>
+                    </div>
+
+                    <!-- REALISTIC SMARTPHONE FRAME -->
+                    <div class="relative mx-auto w-64 sm:w-72 phone-frame rounded-[42px] bg-slate-900 p-3.5 shadow-2xl">
+                        <!-- Camera Punch Hole / Dynamic Island -->
+                        <div class="absolute top-5 left-1/2 -translate-x-1/2 w-20 h-4 bg-black rounded-full z-30 flex items-center justify-end pr-2">
+                            <div class="w-2.5 h-2.5 rounded-full bg-slate-900 border border-slate-700"></div>
+                        </div>
+
+                        <!-- Phone Inner Screen -->
+                        <div class="relative w-full h-[470px] sm:h-[500px] bg-slate-100 rounded-[30px] overflow-hidden flex flex-col text-left select-none border border-slate-700">
+                            
+                            <!-- Phone Top Status Bar -->
+                            <div class="h-7 bg-emerald-800 text-white flex items-center justify-between px-5 text-[10px] font-bold z-20">
+                                <span>08:30</span>
+                                <div class="flex items-center gap-1.5 text-[9px]">
+                                    <i class="fa-solid fa-wifi"></i>
+                                    <i class="fa-solid fa-battery-full"></i>
+                                </div>
+                            </div>
+
+                            <!-- Phone App Header -->
+                            <div class="bg-emerald-800 text-white px-3 py-2 flex items-center justify-between shadow-xs">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-6 h-6 rounded-lg bg-white/10 flex items-center justify-center text-amber-300 text-xs">
+                                        <i class="fa-solid fa-book-quran"></i>
+                                    </div>
+                                    <span class="text-xs font-extrabold">SIM Tahfidz APK</span>
+                                </div>
+                                <span class="text-[9px] bg-amber-400 text-amber-950 font-black px-1.5 py-0.5 rounded">OFFLINE</span>
+                            </div>
+
+                            <!-- SLIDER SCREENS WRAPPER -->
+                            <div class="flex-1 relative overflow-hidden">
+                                
+                                <!-- SLIDE 1: PLAYER TIKRAR -->
+                                <div id="phone-slide-0" class="phone-slide active absolute inset-0 p-3 space-y-2.5 bg-slate-50 transition-opacity duration-500">
+                                    <div class="bg-white p-2.5 rounded-xl border border-slate-200 space-y-1.5 shadow-xs">
+                                        <div class="flex justify-between text-[11px] font-bold">
+                                            <span class="text-emerald-800 font-extrabold">QS. An-Naba' : 1-5</span>
+                                            <span class="text-slate-400">Juz 30</span>
+                                        </div>
+                                        <div class="p-2 rounded bg-emerald-50 text-right">
+                                            <p class="font-quran text-lg text-emerald-950 leading-relaxed">عَمَّ يَتَسَآءَلُونَ ﴿١﴾</p>
+                                        </div>
+                                        <p class="text-[10px] text-slate-500 italic">"Tentang apakah mereka saling bertanya-tanya?"</p>
+                                    </div>
+                                    <!-- Tikrar Controls -->
+                                    <div class="bg-white p-2.5 rounded-xl border border-slate-200 text-center space-y-2">
+                                        <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">Metode Tikrar Berulang</span>
+                                        <div class="flex items-center justify-center gap-2">
+                                            <span class="px-2 py-0.5 rounded bg-emerald-700 text-white font-black text-xs">Ulang 5x</span>
+                                            <span class="px-2 py-0.5 rounded bg-amber-100 text-amber-900 font-bold text-xs">Echo 2s</span>
+                                        </div>
+                                        <div class="flex items-center justify-center gap-3 pt-1">
+                                            <button class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center text-xs"><i class="fa-solid fa-backward-step"></i></button>
+                                            <button class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center text-sm shadow-md"><i class="fa-solid fa-play"></i></button>
+                                            <button class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center text-xs"><i class="fa-solid fa-forward-step"></i></button>
+                                        </div>
+                                    </div>
+                                    <!-- Blind Test Badge -->
+                                    <div class="p-2 rounded-xl bg-amber-50 border border-amber-200 text-center">
+                                        <span class="text-[10px] font-bold text-amber-900">✨ Dilengkapi Fitur Uji Hafalan Blind Test!</span>
+                                    </div>
+                                </div>
+
+                                <!-- SLIDE 2: FORM SETORAN OTOMATIS -->
+                                <div id="phone-slide-1" class="phone-slide hidden absolute inset-0 p-3 space-y-2.5 bg-slate-50 transition-opacity duration-500">
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-xs font-black text-slate-800">Setor Hafalan Baru</span>
+                                        <span class="text-[9px] bg-emerald-100 text-emerald-800 font-bold px-1.5 py-0.5 rounded">Otomatisasi</span>
+                                    </div>
+                                    <div class="bg-white p-2.5 rounded-xl border border-slate-200 space-y-2 text-xs">
+                                        <div>
+                                            <span class="text-[10px] text-slate-400 block">Nama Santri:</span>
+                                            <span class="font-extrabold text-slate-800">Muhammad Zaky Al-Farisi</span>
+                                        </div>
+                                        <div class="p-2 rounded bg-emerald-50 text-[11px] font-bold text-emerald-900">
+                                            Target: An-Naba' 1 s/d 10 (Hal 582)
+                                        </div>
+                                        <div class="flex justify-between items-center text-[11px]">
+                                            <span>Penilaian:</span>
+                                            <span class="font-black text-emerald-700">Mumtaz (Lulus ✓)</span>
+                                        </div>
+                                        <div class="p-2 rounded bg-slate-900 text-white font-bold text-[10px] text-center">
+                                            Total Otomatis: + 1 Halaman Hafal
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- SLIDE 3: MUROJAAH SABQI & MANZIL -->
+                                <div id="phone-slide-2" class="phone-slide hidden absolute inset-0 p-3 space-y-2.5 bg-slate-50 transition-opacity duration-500">
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-xs font-black text-slate-800">Pusat Murojaah Mandiri</span>
+                                        <span class="text-[9px] bg-amber-100 text-amber-800 font-bold px-1.5 py-0.5 rounded">Sabqi & Manzil</span>
+                                    </div>
+                                    <div class="bg-white p-2.5 rounded-xl border border-slate-200 space-y-1.5">
+                                        <span class="text-[10px] font-bold text-emerald-800 block">Antrean Sabqi (5 Setoran Baru):</span>
+                                        <div class="text-[11px] space-y-1">
+                                            <div class="p-1.5 rounded bg-slate-50 border flex justify-between font-bold">
+                                                <span>QS. An-Naba' 1-40</span>
+                                                <span class="text-emerald-700">Siap Ulang</span>
+                                            </div>
+                                            <div class="p-1.5 rounded bg-slate-50 border flex justify-between font-bold">
+                                                <span>QS. An-Nazi'at 1-46</span>
+                                                <span class="text-emerald-700">Siap Ulang</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="bg-amber-50 border border-amber-200 p-2.5 rounded-xl text-[10px] text-amber-900">
+                                        <b>Rotasi Manzil:</b> Sistem mengingatkan juz lama yang belum diulang lebih dari 7 hari!
+                                    </div>
+                                </div>
+
+                                <!-- SLIDE 4: RAPOR & BACKUP MANDIRI -->
+                                <div id="phone-slide-3" class="phone-slide hidden absolute inset-0 p-3 space-y-2.5 bg-slate-50 transition-opacity duration-500">
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-xs font-black text-slate-800">Rapor & Backup HP</span>
+                                        <span class="text-[9px] bg-slate-200 text-slate-700 font-bold px-1.5 py-0.5 rounded">Keamanan</span>
+                                    </div>
+                                    <div class="bg-white p-2.5 rounded-xl border border-slate-200 space-y-2 text-center">
+                                        <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center mx-auto text-base">
+                                            <i class="fa-solid fa-shield-halved"></i>
+                                        </div>
+                                        <h5 class="text-xs font-black text-slate-800">Database Mandiri di HP</h5>
+                                        <p class="text-[10px] text-slate-500">Tersimpan aman di memori internal HP tanpa butuh internet.</p>
+                                        <div class="space-y-1.5 pt-1">
+                                            <button class="w-full py-1.5 rounded-lg bg-emerald-600 text-white text-[10px] font-bold shadow-xs">
+                                                📥 Cadangkan Database (JSON)
+                                            </button>
+                                            <button class="w-full py-1.5 rounded-lg bg-slate-100 border text-slate-700 text-[10px] font-bold">
+                                                📤 Pulihkan dari File JSON
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Phone Bottom Bar with Slider Indicators -->
+                            <div class="h-10 bg-white border-t border-slate-200 flex items-center justify-between px-4 z-20">
+                                <button type="button" onclick="prevSlide()" class="text-slate-400 hover:text-slate-700 text-xs font-bold">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </button>
+                                <div class="flex items-center gap-1.5">
+                                    <span id="dot-0" onclick="goToSlide(0)" class="w-2 h-2 rounded-full bg-emerald-600 cursor-pointer"></span>
+                                    <span id="dot-1" onclick="goToSlide(1)" class="w-2 h-2 rounded-full bg-slate-300 cursor-pointer"></span>
+                                    <span id="dot-2" onclick="goToSlide(2)" class="w-2 h-2 rounded-full bg-slate-300 cursor-pointer"></span>
+                                    <span id="dot-3" onclick="goToSlide(3)" class="w-2 h-2 rounded-full bg-slate-300 cursor-pointer"></span>
+                                </div>
+                                <button type="button" onclick="nextSlide()" class="text-slate-400 hover:text-slate-700 text-xs font-bold">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <p class="text-xs text-slate-500 font-medium">
+                        * Layar slider berganti otomatis setiap 4 detik. Anda juga dapat menekan panah untuk berpindah.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- INTERACTIVE TRIAL HAFALAN (COBA LANGSUNG TANPA LOGIN ADMIN!)   -->
+    <!-- ============================================================== -->
+    <section id="trial-hafalan" class="py-20 lg:py-28 bg-gradient-to-b from-emerald-950 via-emerald-900 to-emerald-950 text-white relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            
+            <div class="text-center space-y-3">
+                <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-400/20 text-amber-300 text-xs font-extrabold border border-amber-300/30 uppercase tracking-wider">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <span>Coba Sekarang Tanpa Login Admin</span>
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-black tracking-tight">
+                    Trial Interaktif: Rasakan Kemudahan Menghafal Tikrar
+                </h2>
+                <p class="text-emerald-200 text-sm sm:text-base max-w-2xl mx-auto">
+                    Uji langsung simulasi pemutar audio Al-Qur'an per ayat, fitur pengulangan (*Tikrar*), dan coba tombol <b>Uji Hafalan (Blind Test)</b> langsung di browser Anda sekarang!
+                </p>
+            </div>
+
+            <!-- LIVE TRIAL PLAYER WIDGET -->
+            <div class="bg-white text-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl border border-emerald-500/30 space-y-6">
+                
+                <!-- Controls Row -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pb-4 border-b border-slate-100">
+                    <div>
+                        <label class="block text-xs font-extrabold text-slate-600 mb-1.5">PILIH SURAH CONTOH</label>
+                        <select id="trial-surah-select" onchange="loadTrialSurah()" class="w-full text-xs font-bold p-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-emerald-500 bg-slate-50">
+                            <option value="1">1. Al-Fatihah (7 Ayat)</option>
+                            <option value="78" selected>78. An-Naba' (Ayat 1-5)</option>
+                            <option value="112">112. Al-Ikhlas (4 Ayat)</option>
+                            <option value="113">113. Al-Falaq (5 Ayat)</option>
+                            <option value="114">114. An-Nas (6 Ayat)</option>
+                            <option value="108">108. Al-Kautsar (3 Ayat)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-extrabold text-slate-600 mb-1.5">PILIH QARI / MUROTTAL</label>
+                        <select id="trial-qari-select" onchange="onTrialQariChange()" class="w-full text-xs font-bold p-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-emerald-500 bg-slate-50">
+                            <option value="Alafasy_128kbps" selected>Misyari Rasyid Al-Afasy (Tartil)</option>
+                            <option value="Husary_128kbps">Mahmoud Khalil Al-Hushari (Tajwid)</option>
+                            <option value="Minshawy_Murattal_128kbps">Muhammad Siddiq Al-Minshawi</option>
+                            <option value="Abdurrahmaan_As-Sudais_192kbps">Abdurrahman As-Sudais (Haram)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-extrabold text-slate-600 mb-1.5">MODE UJI HAFALAN</label>
+                        <button type="button" id="btn-blind-test" onclick="toggleBlindTest()" class="w-full text-xs font-extrabold p-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-emerald-950 flex items-center justify-center gap-2 shadow-sm transition-all active:scale-95">
+                            <i id="blind-test-icon" class="fa-solid fa-eye-slash"></i>
+                            <span id="blind-test-text">Aktifkan Blind Test (Tutup Teks)</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Ayat Display Card -->
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span id="trial-current-title" class="text-xs font-extrabold text-emerald-800 uppercase tracking-wide">
+                            QS. An-Naba' : Ayat 1
+                        </span>
+                        <span id="trial-tikrar-counter" class="text-[11px] font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800">
+                            Tikrar Putaran: 1 / 3
+                        </span>
+                    </div>
+
+                    <!-- Arabic Text Area (Can be blurred by Blind Test) -->
+                    <div id="trial-arabic-box" class="p-6 sm:p-8 rounded-2xl bg-emerald-50/60 border border-emerald-200 text-right space-y-3 transition-all duration-300">
+                        <p id="trial-arabic-text" class="font-quran text-3xl sm:text-4xl text-slate-900 leading-loose transition-all duration-300">
+                            عَمَّ يَتَسَآءَلُونَ ﴿١﴾
+                        </p>
+                        <p id="trial-translation-text" class="text-xs sm:text-sm text-slate-600 text-left font-medium transition-all duration-300">
+                            "Tentang apakah mereka saling bertanya-tanya?"
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Playback & Simulation Actions -->
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
+                    <!-- Audio Controls -->
+                    <div class="flex items-center gap-3">
+                        <button type="button" onclick="prevTrialAyah()" class="w-10 h-10 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center text-sm active:scale-95">
+                            <i class="fa-solid fa-backward-step"></i>
+                        </button>
+                        <button type="button" id="btn-trial-play" onclick="toggleTrialAudio()" class="px-6 py-3 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white font-extrabold text-sm shadow-md flex items-center gap-2 active:scale-95">
+                            <i id="trial-play-icon" class="fa-solid fa-play"></i>
+                            <span id="trial-play-text">Putar Audio Ayat</span>
+                        </button>
+                        <button type="button" onclick="nextTrialAyah()" class="w-10 h-10 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center text-sm active:scale-95">
+                            <i class="fa-solid fa-forward-step"></i>
+                        </button>
+                    </div>
+
+                    <!-- Simulate Setoran Button -->
+                    <div>
+                        <button type="button" onclick="simulateSetoran()" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-black text-xs sm:text-sm shadow-md flex items-center justify-center gap-2 active:scale-95">
+                            <i class="fa-solid fa-check-double text-amber-300"></i>
+                            <span>Simulasi Setor Hafalan (Lihat Hitungan Otomatis)</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- SIMULATION MODAL (POPUP HASIL SETORAN OTOMATIS) -->
+            <div id="modal-simulasi-setoran" class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4">
+                <div class="bg-white text-slate-800 rounded-3xl max-w-md w-full p-6 shadow-2xl border border-slate-200 space-y-4 animate-scaleUp">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-2xl mx-auto shadow-inner">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <div class="text-center space-y-1">
+                        <h4 class="text-lg font-black text-slate-900">Simulasi Setoran Berhasil!</h4>
+                        <p class="text-xs text-slate-500">Beginilah cara sistem memproses setoran santri secara otomatis:</p>
+                    </div>
+
+                    <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200 space-y-2.5 text-xs">
+                        <div class="flex justify-between border-b pb-1.5">
+                            <span class="text-slate-500">Materi Setoran:</span>
+                            <span class="font-bold text-slate-800" id="sim-materi">QS. An-Naba' : 1-5</span>
+                        </div>
+                        <div class="flex justify-between border-b pb-1.5">
+                            <span class="text-slate-500">Penilaian Musyrif:</span>
+                            <span class="font-extrabold text-emerald-700">Mumtaz (Lulus Sempurna)</span>
+                        </div>
+                        <div class="flex justify-between border-b pb-1.5">
+                            <span class="text-slate-500">Perubahan Otomatis:</span>
+                            <span class="font-extrabold text-emerald-800">+ 1.0 Halaman (Bertambah Maju)</span>
+                        </div>
+                        <div class="p-2.5 rounded-xl bg-emerald-600 text-white font-bold text-center">
+                            🎯 Target Rekomendasi Selanjutnya: QS. An-Naba' Ayat 6 s/d 15
+                        </div>
+                    </div>
+
+                    <p class="text-[11px] text-slate-400 text-center italic">
+                        Di versi lengkap (APK & PC), semua santri tercatat permanen di database mandiri!
+                    </p>
+
+                    <button type="button" onclick="closeSimulasiSetoran()" class="w-full py-3 rounded-xl bg-slate-900 text-white font-extrabold text-xs shadow-md hover:bg-slate-800">
+                        Tutup Simulasi
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- FITUR UNGGULAN (FEATURES GRID)                                 -->
+    <!-- ============================================================== -->
+    <section id="fitur" class="py-20 lg:py-28 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-3">
+                <span class="text-xs font-black text-emerald-700 bg-emerald-100 px-3.5 py-1 rounded-full uppercase tracking-wider">
+                    Fitur Lengkap
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+                    Dirancang Khusus untuk Kebutuhan Pesantren & Penghafal Qur'an
+                </h2>
+                <p class="text-slate-600 text-sm sm:text-base">
+                    Seluruh fitur dibuat berdasarkan alur riil setoran santri di pondok pesantren dan metode talaqqi para penghafal Al-Qur'an.
+                </p>
+            </div>
+
+            <!-- 8 KEY FEATURES -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Feature 1 -->
+                <div class="bg-slate-50 rounded-3xl p-6 border border-slate-200/80 hover:border-emerald-400 hover:shadow-lg transition-all space-y-3">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-xl shadow-xs">
+                        <i class="fa-solid fa-repeat"></i>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-base">Metode Tikrar Berulang</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Pengulangan ayat otomatis (1x, 3x, 5x, 7x hingga 40x mutqin) dengan jeda waktu (*echo pause*) agar santri dapat menirukan bacaan Qari.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-slate-50 rounded-3xl p-6 border border-slate-200/80 hover:border-emerald-400 hover:shadow-lg transition-all space-y-3">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-800 flex items-center justify-center text-xl shadow-xs">
+                        <i class="fa-solid fa-calculator"></i>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-base">Hitung Capaian Otomatis</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Saat santri lulus, total halaman dan juz otomatis bertambah maju. Jika perlu pengulangan, sistem bisa mengurangi atau menahan posisi hafalan.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-slate-50 rounded-3xl p-6 border border-slate-200/80 hover:border-emerald-400 hover:shadow-lg transition-all space-y-3">
+                    <div class="w-12 h-12 rounded-2xl bg-teal-100 text-teal-800 flex items-center justify-center text-xl shadow-xs">
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-base">Pusat Murojaah Terpadu</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Membedakan otomatis antara <b>Murojaah Baru (*Sabqi*)</b> untuk 5 setoran terakhir dan <b>Murojaah Lama (*Manzil*)</b> dengan rotasi cerdas.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-slate-50 rounded-3xl p-6 border border-slate-200/80 hover:border-emerald-400 hover:shadow-lg transition-all space-y-3">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-100 text-blue-800 flex items-center justify-center text-xl shadow-xs">
+                        <i class="fa-solid fa-eye-slash"></i>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-base">Uji Hafalan (Blind Test)</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Fitur penyamaran/blur teks Arab seketika untuk menguji kemandirian ingatan santri sambil tetap menyelaraskan dengan ketukan audio murottal.
+                    </p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="bg-slate-50 rounded-3xl p-6 border border-slate-200/80 hover:border-emerald-400 hover:shadow-lg transition-all space-y-3">
+                    <div class="w-12 h-12 rounded-2xl bg-rose-100 text-rose-800 flex items-center justify-center text-xl shadow-xs">
+                        <i class="fa-solid fa-microphone"></i>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-base">Rekam Suara Bacaan</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Santri dapat merekam suaranya sendiri dan memutarnya kembali untuk mengevaluasi fashahah, mad, dan makharijul huruf sebelum setoran ke ustadz.
+                    </p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="bg-slate-50 rounded-3xl p-6 border border-slate-200/80 hover:border-emerald-400 hover:shadow-lg transition-all space-y-3">
+                    <div class="w-12 h-12 rounded-2xl bg-purple-100 text-purple-800 flex items-center justify-center text-xl shadow-xs">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-base">Versi Android APK Mandiri</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Tinggal install file `.apk`, langsung pakai. Setiap HP punya database internal mandiri, berjalan 100% offline tanpa perlu koneksi internet.
+                    </p>
+                </div>
+
+                <!-- Feature 7 -->
+                <div class="bg-slate-50 rounded-3xl p-6 border border-slate-200/80 hover:border-emerald-400 hover:shadow-lg transition-all space-y-3">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-xl shadow-xs">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-base">Laptop Portable (No Install)</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Sudah dilengkapi PHP 8.3 tertanam di dalam folder. Cukup dobel-klik `run.bat` atau `Buka-Aplikasi.vbs`, aplikasi langsung terbuka di laptop mana pun.
+                    </p>
+                </div>
+
+                <!-- Feature 8 -->
+                <div class="bg-slate-50 rounded-3xl p-6 border border-slate-200/80 hover:border-emerald-400 hover:shadow-lg transition-all space-y-3">
+                    <div class="w-12 h-12 rounded-2xl bg-indigo-100 text-indigo-800 flex items-center justify-center text-xl shadow-xs">
+                        <i class="fa-solid fa-print"></i>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-base">Rapor A4 & Ekspor Excel</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Cetak rapor resmi format A4 rapi dengan checklist 30 juz dan kolom tanda tangan ustadz, serta ekspor seluruh data santri ke format spreadsheet Excel.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- MANFAAT APLIKASI (BENEFITS MATRIX)                             -->
+    <!-- ============================================================== -->
+    <section id="manfaat" class="py-20 lg:py-28 bg-slate-100 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-3">
+                <span class="text-xs font-black text-emerald-700 bg-emerald-100 px-3.5 py-1 rounded-full uppercase tracking-wider">
+                    Manfaat Nyata
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+                    Dampak Positif bagi Seluruh Ekosistem Tahfidz
+                </h2>
+                <p class="text-slate-600 text-sm sm:text-base">
+                    Membantu santri, ustadz, pengasuh pesantren, dan orang tua dalam memantau kalamullah secara transparan dan teratur.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Benefit: Santri -->
+                <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-200 space-y-3.5">
+                    <div class="w-10 h-10 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center text-lg font-bold border border-emerald-200">
+                        <i class="fa-solid fa-user-graduate"></i>
+                    </div>
+                    <h3 class="font-black text-slate-900 text-base">Bagi Para Santri</h3>
+                    <ul class="text-xs text-slate-600 space-y-2 leading-relaxed">
+                        <li>• Hafalan lebih cepat melekat kuat (*mutqin*) dengan audio tikrar teratur.</li>
+                        <li>• Percaya diri sebelum setor ke ustadz berkat fitur blind test dan rekam suara.</li>
+                        <li>• Mengetahui dengan pasti target ayat dan halaman berikutnya tanpa bingung.</li>
+                    </ul>
+                </div>
+
+                <!-- Benefit: Ustadz / Musyrif -->
+                <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-200 space-y-3.5">
+                    <div class="w-10 h-10 rounded-2xl bg-amber-50 text-amber-700 flex items-center justify-center text-lg font-bold border border-amber-200">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+                    <h3 class="font-black text-slate-900 text-base">Bagi Ustadz / Musyrif</h3>
+                    <ul class="text-xs text-slate-600 space-y-2 leading-relaxed">
+                        <li>• Menghemat waktu: tidak perlu lagi menghitung manual jumlah halaman yang disetor.</li>
+                        <li>• Jadwal murojaah santri otomatis diingatkan oleh sistem (Sabqi & Manzil).</li>
+                        <li>• Pencatatan setoran selesai dalam 5 detik per santri dengan opsi otomatisasi.</li>
+                    </ul>
+                </div>
+
+                <!-- Benefit: Pesantren / Rumah Tahfidz -->
+                <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-200 space-y-3.5">
+                    <div class="w-10 h-10 rounded-2xl bg-teal-50 text-teal-700 flex items-center justify-center text-lg font-bold border border-teal-200">
+                        <i class="fa-solid fa-mosque"></i>
+                    </div>
+                    <h3 class="font-black text-slate-900 text-base">Bagi Pondok Pesantren</h3>
+                    <ul class="text-xs text-slate-600 space-y-2 leading-relaxed">
+                        <li>• Bebas biaya lisensi seumur hidup (100% gratis wakaf digital dari ChatTutor).</li>
+                        <li>• Data santri tersimpan aman di komputer atau HP lembaga tanpa ketergantungan internet.</li>
+                        <li>• Standarisasi kurikulum tahfidz dengan pemetaan visual checklist 30 juz.</li>
+                    </ul>
+                </div>
+
+                <!-- Benefit: Wali Santri -->
+                <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-200 space-y-3.5">
+                    <div class="w-10 h-10 rounded-2xl bg-blue-50 text-blue-700 flex items-center justify-center text-lg font-bold border border-blue-200">
+                        <i class="fa-solid fa-hands-holding-child"></i>
+                    </div>
+                    <h3 class="font-black text-slate-900 text-base">Bagi Wali Santri</h3>
+                    <ul class="text-xs text-slate-600 space-y-2 leading-relaxed">
+                        <li>• Menerima Rapor Tahfidz resmi yang rapi dan transparan per surat dan per juz.</li>
+                        <li>• Mengetahui riwayat kelancaran (*mumtaz / jayyid*) dan kedisiplinan setoran ananda.</li>
+                        <li>• Menentramkan hati melihat progres nyata buah hati menuju gelar Hafidz Qur'an.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- DOWNLOAD CENTER (SEMUA VERSI GRATIS)                           -->
+    <!-- ============================================================== -->
+    <section id="download" class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-3">
+                <span class="text-xs font-black text-amber-800 bg-amber-100 px-3.5 py-1 rounded-full uppercase tracking-wider">
+                    Pusat Unduhan Resmi
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+                    Unduh Gratis Sekarang & Pasang Tanpa Ribet
+                </h2>
+                <p class="text-slate-600 text-sm sm:text-base">
+                    Pilih versi yang paling sesuai dengan kebutuhan Anda. Seluruhnya gratis dan tanpa biaya tersembunyi.
+                </p>
+            </div>
+
+            <!-- DOWNLOAD CARDS GRID -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- CARD 1: ANDROID APK MANDIRI -->
+                <div class="rounded-3xl bg-gradient-to-b from-emerald-50 to-white p-6 sm:p-8 border-2 border-emerald-500 shadow-xl flex flex-col justify-between space-y-6 relative overflow-hidden">
+                    <div class="absolute top-4 right-4 bg-emerald-600 text-white text-[10px] font-black px-2.5 py-1 rounded-full uppercase">
+                        Rekomendasi HP
+                    </div>
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-600 text-white flex items-center justify-center text-2xl shadow-md">
+                            <i class="fa-brands fa-android"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-black text-slate-900">Versi Android APK Mandiri</h3>
+                            <p class="text-xs text-slate-500 mt-1">SIM-Tahfidz-Quran.apk (~7.04 MB)</p>
+                        </div>
+                        <ul class="text-xs text-slate-600 space-y-2 leading-relaxed">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Tinggal install di HP Android mana saja.</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Database mandiri di tiap HP (100% Offline).</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Fitur Cadangkan / Pulihkan JSON.</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Player Tikrar & Rekam Suara Setoran.</li>
+                        </ul>
+                    </div>
+
+                    <div class="space-y-2">
+                        <a href="downloads/SIM-Tahfidz-Quran.apk" download class="w-full py-3.5 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white font-extrabold text-sm shadow-md flex items-center justify-center gap-2 active:scale-95 transition-all">
+                            <i class="fa-solid fa-download"></i>
+                            <span>Download APK Android (.apk)</span>
+                        </a>
+                        <p class="text-[11px] text-slate-400 text-center">Bisa langsung dikirim via WA ke santri</p>
+                    </div>
+                </div>
+
+                <!-- CARD 2: LAPTOP / PC PORTABLE -->
+                <div class="rounded-3xl bg-gradient-to-b from-slate-50 to-white p-6 sm:p-8 border border-slate-200 shadow-lg flex flex-col justify-between space-y-6">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 rounded-2xl bg-slate-800 text-white flex items-center justify-center text-2xl shadow-md">
+                            <i class="fa-solid fa-laptop"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-black text-slate-900">Versi Laptop / PC Portable</h3>
+                            <p class="text-xs text-slate-500 mt-1">Lengkap dengan PHP 8.3 Tertanam</p>
+                        </div>
+                        <ul class="text-xs text-slate-600 space-y-2 leading-relaxed">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Tanpa perlu install PHP / XAMPP / Laragon.</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Cukup jalankan <code>run.bat</code> atau <code>Buka-Aplikasi.vbs</code>.</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Cetak Rapor Resmi A4 & Export Excel.</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Cocok untuk Ustadz & Administrasi Pesantren.</li>
+                        </ul>
+                    </div>
+
+                    <div class="space-y-2">
+                        <a href="https://github.com/HendiKusnadi/HapalanQur-an/archive/refs/heads/main.zip" target="_blank" class="w-full py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-extrabold text-sm shadow-md flex items-center justify-center gap-2 active:scale-95 transition-all">
+                            <i class="fa-solid fa-file-zipper"></i>
+                            <span>Unduh Paket Laptop ZIP</span>
+                        </a>
+                        <p class="text-[11px] text-slate-400 text-center">Salin ke laptop/Flashdisk langsung jalan</p>
+                    </div>
+                </div>
+
+                <!-- CARD 3: SOURCE CODE & PWA BROWSER -->
+                <div class="rounded-3xl bg-gradient-to-b from-amber-50/50 to-white p-6 sm:p-8 border border-amber-200 shadow-lg flex flex-col justify-between space-y-6">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 rounded-2xl bg-amber-500 text-emerald-950 flex items-center justify-center text-2xl shadow-md">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-black text-slate-900">Source Code & PWA</h3>
+                            <p class="text-xs text-slate-500 mt-1">GitHub Repository & Web App</p>
+                        </div>
+                        <ul class="text-xs text-slate-600 space-y-2 leading-relaxed">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Terbuka untuk pengembangan syiar dakwah.</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> PWA: Install langsung lewat Chrome di HP.</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Dilengkapi skrip pembuat APK otomatis.</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Panduan teknis & administrasi lengkap.</li>
+                        </ul>
+                    </div>
+
+                    <div class="space-y-2">
+                        <a href="https://github.com/HendiKusnadi/HapalanQur-an.git" target="_blank" class="w-full py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-emerald-950 font-black text-sm shadow-md flex items-center justify-center gap-2 active:scale-95 transition-all">
+                            <i class="fa-brands fa-github text-base"></i>
+                            <span>Buka Repositori GitHub</span>
+                        </a>
+                        <p class="text-[11px] text-slate-400 text-center">Bebas fork dan gunakan untuk umat</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- FAQ SECTION                                                    -->
+    <!-- ============================================================== -->
+    <section class="py-20 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 space-y-10">
+            <div class="text-center space-y-2">
+                <h2 class="text-2xl sm:text-3xl font-black text-slate-900">Pertanyaan yang Sering Diajukan (FAQ)</h2>
+                <p class="text-xs sm:text-sm text-slate-500">Hal penting seputar penggunaan dan lisensi aplikasi.</p>
+            </div>
+
+            <div class="space-y-4 text-xs sm:text-sm">
+                <details class="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs cursor-pointer group">
+                    <summary class="font-extrabold text-slate-800 flex justify-between items-center">
+                        <span>Apakah aplikasi ini benar-benar 100% gratis tanpa biaya langganan?</span>
+                        <i class="fa-solid fa-chevron-down text-slate-400 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <p class="text-slate-600 mt-3 leading-relaxed">
+                        <b>BENAR 100% GRATIS!</b> Aplikasi ini adalah wujud wakaf digital dari ChatTutor.id untuk dakwah Al-Qur'an. Tidak ada biaya berlangganan, tidak ada biaya per santri, dan dilarang keras diperjualbelikan oleh siapa pun.
+                    </p>
+                </details>
+
+                <details class="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs cursor-pointer group">
+                    <summary class="font-extrabold text-slate-800 flex justify-between items-center">
+                        <span>Apakah aplikasi versi HP membutuhkan kuota internet terus-menerus?</span>
+                        <i class="fa-solid fa-chevron-down text-slate-400 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <p class="text-slate-600 mt-3 leading-relaxed">
+                        <b>TIDAK PERLU KUOTA.</b> Versi Android APK dilengkapi database mandiri di HP (*LocalStorage & IndexedDB*). Seluruh proses input setoran, kalkulasi otomatis, dan murojaah dapat berjalan 100% offline tanpa sinyal internet.
+                    </p>
+                </details>
+
+                <details class="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs cursor-pointer group">
+                    <summary class="font-extrabold text-slate-800 flex justify-between items-center">
+                        <span>Bagaimana jika santri atau ustadz berganti HP?</span>
+                        <i class="fa-solid fa-chevron-down text-slate-400 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <p class="text-slate-600 mt-3 leading-relaxed">
+                        Tersedia fitur <b>Cadangkan Database (JSON)</b> di menu Pengaturan. Cukup tekan tombol tersebut, kirimkan file cadangan ke WhatsApp HP baru, lalu pilih <b>Pulihkan Database</b>. Seluruh data hafalan langsung pulih seketika.
+                    </p>
+                </details>
+
+                <details class="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs cursor-pointer group">
+                    <summary class="font-extrabold text-slate-800 flex justify-between items-center">
+                        <span>Bolehkah saya menyebarkan file APK ini ke pesantren lain?</span>
+                        <i class="fa-solid fa-chevron-down text-slate-400 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <p class="text-slate-600 mt-3 leading-relaxed">
+                        <b>SANGAT DIANJURKAN!</b> Silakan bagikan ke seluruh guru ngaji, rumah tahfidz, madrasah, dan pesantren di seluruh penjuru dunia secara cuma-cuma demi syiar kalamullah.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- FOOTER RESMI CHATTUTOR                                         -->
+    <!-- ============================================================== -->
+    <footer class="bg-emerald-950 text-white border-t border-emerald-800/80 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Col 1: Brand -->
+                <div class="space-y-4 md:col-span-2">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-2xl bg-amber-400 text-emerald-950 flex items-center justify-center text-lg font-black">
+                            <i class="fa-solid fa-book-quran"></i>
+                        </div>
+                        <span class="text-xl font-black tracking-tight">SIM Tahfidz Al-Qur'an</span>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed max-w-md">
+                        Aplikasi manajemen pembelajaran dan hafalan Al-Qur'an terintegrasi dengan metode Tikrar dan evaluasi otomatis. Dikembangkan dengan niat tulus sebagai wakaf digital dakwah.
+                    </p>
+                    <div class="p-3.5 rounded-2xl bg-emerald-900/60 border border-emerald-700/60 text-xs text-amber-200 space-y-1">
+                        <p class="font-extrabold flex items-center gap-1.5 text-amber-300">
+                            <i class="fa-solid fa-hand-holding-heart"></i> Murni 100% Gratis Tanpa Komersialisasi
+                        </p>
+                        <p class="text-[11px] text-slate-300">Dilarang keras memperjualbelikan aplikasi ini.</p>
+                    </div>
+                </div>
+
+                <!-- Col 2: Kanal Resmi -->
+                <div class="space-y-3">
+                    <h4 class="text-xs font-black uppercase tracking-wider text-amber-400">Kanal Resmi Kami</h4>
+                    <ul class="text-xs text-slate-300 space-y-2.5">
+                        <li>
+                            <a href="https://chattutor.id" target="_blank" class="hover:text-amber-300 flex items-center gap-2 transition-colors">
+                                <i class="fa-solid fa-globe text-emerald-400"></i>
+                                <span>chattutor.id</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://webschool.id" target="_blank" class="hover:text-amber-300 flex items-center gap-2 transition-colors">
+                                <i class="fa-solid fa-school text-emerald-400"></i>
+                                <span>webschool.id</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://youtube.com/@chattutor" target="_blank" class="hover:text-amber-300 flex items-center gap-2 transition-colors">
+                                <i class="fa-brands fa-youtube text-red-400"></i>
+                                <span>YouTube ChatTutor</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://facebook.com/chattutor" target="_blank" class="hover:text-amber-300 flex items-center gap-2 transition-colors">
+                                <i class="fa-brands fa-facebook text-blue-400"></i>
+                                <span>Facebook ChatTutor</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Layanan Bantuan -->
+                <div class="space-y-3">
+                    <h4 class="text-xs font-black uppercase tracking-wider text-amber-400">Layanan & Konsultasi</h4>
+                    <p class="text-xs text-slate-300">
+                        Untuk pertanyaan teknis, konsultasi implementasi di pesantren, atau masukan pengembangan:
+                    </p>
+                    <a href="https://wa.me/628975775046?text=Halo%20ChatTutor,%20saya%20pengguna%20Aplikasi%20SIM%20Tahfidz%20Quran" target="_blank" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs shadow-md transition-all active:scale-95">
+                        <i class="fa-brands fa-whatsapp text-sm"></i>
+                        <span>WA: 0897 5775 046</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright & Doa -->
+            <div class="border-t border-emerald-900 pt-8 text-center text-xs text-slate-400 space-y-2">
+                <p>
+                    &copy; 2026 <b>SIM Tahfidz Al-Qur'an</b>. Dipersembahkan secara tulus oleh <b>ChatTutor.id & webschool.id</b>.
+                </p>
+                <p class="text-emerald-300 font-medium">
+                    Doa terbaik semoga menjadi ladang jariyah dan mengantarkan para santri menjadi Hafidz Qur'an yang berakhlakul karimah. Aamiin.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================== -->
+    <!-- INTERACTIVE SCRIPTS                                            -->
+    <!-- ============================================================== -->
+    <script>
+        // -------------------------------------------------------------
+        // MOBILE NAVBAR TOGGLE
+        // -------------------------------------------------------------
+        function toggleMobileNav() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // -------------------------------------------------------------
+        // LAPTOP MOCKUP TAB SWITCHER
+        // -------------------------------------------------------------
+        function switchLaptopTab(tabId) {
+            document.querySelectorAll('.laptop-tab-btn').forEach(b => {
+                b.classList.remove('bg-emerald-800', 'text-white', 'shadow-sm');
+                b.classList.add('bg-white', 'text-slate-600');
+            });
+            document.querySelectorAll('.laptop-screen').forEach(s => s.classList.add('hidden'));
+
+            if (tabId === 'tab-dashboard') {
+                document.getElementById('btn-tab-dashboard').classList.add('bg-emerald-800', 'text-white', 'shadow-sm');
+                document.getElementById('laptop-screen-dashboard').classList.remove('hidden');
+            } else if (tabId === 'tab-setoran') {
+                document.getElementById('btn-tab-setoran').classList.add('bg-emerald-800', 'text-white', 'shadow-sm');
+                document.getElementById('laptop-screen-setoran').classList.remove('hidden');
+            } else if (tabId === 'tab-rapor') {
+                document.getElementById('btn-tab-rapor').classList.add('bg-emerald-800', 'text-white', 'shadow-sm');
+                document.getElementById('laptop-screen-rapor').classList.remove('hidden');
+            }
+        }
+
+        // -------------------------------------------------------------
+        // PHONE SLIDER CAROUSEL (AUTOMATIC & INTERACTIVE)
+        // -------------------------------------------------------------
+        let currentSlide = 0;
+        const totalSlides = 4;
+        let sliderInterval = null;
+        let isSliderPlaying = true;
+
+        function updateSlideUI() {
+            for (let i = 0; i < totalSlides; i++) {
+                const slide = document.getElementById(`phone-slide-${i}`);
+                const dot = document.getElementById(`dot-${i}`);
+                if (i === currentSlide) {
+                    slide.classList.remove('hidden');
+                    dot.className = 'w-2 h-2 rounded-full bg-emerald-600 cursor-pointer';
+                } else {
+                    slide.classList.add('hidden');
+                    dot.className = 'w-2 h-2 rounded-full bg-slate-300 cursor-pointer';
+                }
+            }
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlideUI();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlideUI();
+        }
+
+        function goToSlide(idx) {
+            currentSlide = idx;
+            updateSlideUI();
+        }
+
+        function startSliderAutoplay() {
+            sliderInterval = setInterval(nextSlide, 4000);
+            isSliderPlaying = true;
+            document.getElementById('slider-play-icon').className = 'fa-solid fa-pause';
+        }
+
+        function pauseSliderAutoplay() {
+            clearInterval(sliderInterval);
+            isSliderPlaying = false;
+            document.getElementById('slider-play-icon').className = 'fa-solid fa-play';
+        }
+
+        function toggleSliderAutoplay() {
+            if (isSliderPlaying) {
+                pauseSliderAutoplay();
+            } else {
+                startSliderAutoplay();
+            }
+        }
+
+        // Mulai slider otomatis saat halaman dimuat
+        startSliderAutoplay();
+
+        // -------------------------------------------------------------
+        // LIVE TRIAL PLAYER LOGIC
+        // -------------------------------------------------------------
+        const TRIAL_DATA = {
+            "1": {
+                nama: "Al-Fatihah",
+                ayahs: [
+                    { no: 1, arab: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ", arti: "Dengan nama Allah Yang Maha Pengasih, Maha Penyayang." },
+                    { no: 2, arab: "الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ", arti: "Segala puji bagi Allah, Tuhan seluruh alam." },
+                    { no: 3, arab: "الرَّحْمَٰنِ الرَّحِيمِ", arti: "Yang Maha Pengasih, Maha Penyayang." },
+                    { no: 4, arab: "مَالِكِ يَوْمِ الدِّينِ", arti: "Pemilik hari pembalasan." },
+                    { no: 5, arab: "إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ", arti: "Hanya kepada Engkaulah kami menyembah dan hanya kepada Engkaulah kami mohon pertolongan." }
+                ]
+            },
+            "78": {
+                nama: "An-Naba'",
+                ayahs: [
+                    { no: 1, arab: "عَمَّ يَتَسَآءَلُونَ ﴿١﴾", arti: "Tentang apakah mereka saling bertanya-tanya?" },
+                    { no: 2, arab: "عَنِ النَّبَإِ الْعَظِيمِ ﴿٢﴾", arti: "Tentang berita yang besar (hari berbangkit)," },
+                    { no: 3, arab: "الَّذِي هُمْ فِيهِ مُخْتَلِفُونَ ﴿٣﴾", arti: "yang dalam hal itu mereka berselisih." },
+                    { no: 4, arab: "كَلَّا سَيَعْلَمُونَ ﴿٤﴾", arti: "Tidak! Kelak mereka akan mengetahui," },
+                    { no: 5, arab: "ثُمَّ كَلَّا سَيَعْلَمُونَ ﴿٥﴾", arti: "sekali lagi tidak! Kelak mereka akan mengetahui." }
+                ]
+            },
+            "112": {
+                nama: "Al-Ikhlas",
+                ayahs: [
+                    { no: 1, arab: "قُلْ هُوَ اللَّهُ أَحَدٌ ﴿١﴾", arti: "Katakanlah (Muhammad), Dialah Allah, Yang Maha Esa." },
+                    { no: 2, arab: "اللَّهُ الصَّمَدُ ﴿٢﴾", arti: "Allah tempat meminta segala sesuatu." },
+                    { no: 3, arab: "لَمْ يَلِدْ وَلَمْ يُولَدْ ﴿٣﴾", arti: "(Allah) tidak beranak dan tidak pula diperanakkan," },
+                    { no: 4, arab: "وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ ﴿٤﴾", arti: "dan tidak ada sesuatu yang setara dengan Dia." }
+                ]
+            },
+            "113": {
+                nama: "Al-Falaq",
+                ayahs: [
+                    { no: 1, arab: "قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ ﴿١﴾", arti: "Katakanlah, Aku berlindung kepada Tuhan yang menguasai subuh (fajar)," },
+                    { no: 2, arab: "مِن شَرِّ مَا خَلَقَ ﴿٢﴾", arti: "dari kejahatan (makhluk yang) Dia ciptakan," },
+                    { no: 3, arab: "وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ ﴿٣﴾", arti: "dan dari kejahatan malam apabila telah gelap gulita," }
+                ]
+            },
+            "114": {
+                nama: "An-Nas",
+                ayahs: [
+                    { no: 1, arab: "قُلْ أَعُوذُ بِرَبِّ النَّاسِ ﴿١﴾", arti: "Katakanlah, Aku berlindung kepada Tuhannya manusia," },
+                    { no: 2, arab: "مَلِكِ النَّاسِ ﴿٢﴾", arti: "Raja manusia," },
+                    { no: 3, arab: "إِلَٰهِ النَّاسِ ﴿٣﴾", arti: "sembahan manusia," }
+                ]
+            },
+            "108": {
+                nama: "Al-Kautsar",
+                ayahs: [
+                    { no: 1, arab: "إِنَّا أَعْطَيْنَاكَ الْكَوْثَرَ ﴿١﴾", arti: "Sungguh, Kami telah memberimu (Muhammad) nikmat yang banyak." },
+                    { no: 2, arab: "فَصَلِّ لِرَبِّكَ وَانْحَرْ ﴿٢﴾", arti: "Maka laksanakanlah sholat karena Tuhanmu, dan berkurbanlah." },
+                    { no: 3, arab: "إِنَّ شَانِئَكَ هُوَ الْأَبْتَرُ ﴿٣﴾", arti: "Sungguh, orang-orang yang membencimu dialah yang terputus (dari rahmat Allah)." }
+                ]
+            }
+        };
+
+        let trialCurrentSurah = "78";
+        let trialCurrentAyahIdx = 0;
+        let isBlindTestActive = false;
+        const trialAudioPlayer = new Audio();
+        let isTrialAudioPlaying = false;
+
+        function loadTrialSurah() {
+            trialCurrentSurah = document.getElementById('trial-surah-select').value;
+            trialCurrentAyahIdx = 0;
+            updateTrialAyahDisplay();
+        }
+
+        function updateTrialAyahDisplay() {
+            const surah = TRIAL_DATA[trialCurrentSurah];
+            const ayah = surah.ayahs[trialCurrentAyahIdx];
+
+            document.getElementById('trial-current-title').textContent = `QS. ${surah.nama} : Ayat ${ayah.no}`;
+            document.getElementById('trial-arabic-text').textContent = ayah.arab;
+            document.getElementById('trial-translation-text').textContent = `"${ayah.arti}"`;
+
+            // Setup Audio URL
+            const qari = document.getElementById('trial-qari-select').value;
+            const sPad = String(trialCurrentSurah).padStart(3, '0');
+            const aPad = String(ayah.no).padStart(3, '0');
+            trialAudioPlayer.src = `https://everyayah.com/data/${qari}/${sPad}${aPad}.mp3`;
+
+            if (isTrialAudioPlaying) {
+                trialAudioPlayer.play().catch(() => {});
+            }
+        }
+
+        function onTrialQariChange() {
+            const wasPlaying = isTrialAudioPlaying;
+            if (wasPlaying) trialAudioPlayer.pause();
+            updateTrialAyahDisplay();
+        }
+
+        function toggleTrialAudio() {
+            if (!isTrialAudioPlaying) {
+                trialAudioPlayer.play().then(() => {
+                    isTrialAudioPlaying = true;
+                    document.getElementById('trial-play-icon').className = 'fa-solid fa-pause';
+                    document.getElementById('trial-play-text').textContent = 'Jeda Audio';
+                }).catch(() => {
+                    alert('Sedang memuat audio dari server EveryAyah. Pastikan internet Anda aktif untuk streaming audio.');
+                });
+            } else {
+                trialAudioPlayer.pause();
+                isTrialAudioPlaying = false;
+                document.getElementById('trial-play-icon').className = 'fa-solid fa-play';
+                document.getElementById('trial-play-text').textContent = 'Putar Audio Ayat';
+            }
+        }
+
+        trialAudioPlayer.onended = () => {
+            isTrialAudioPlaying = false;
+            document.getElementById('trial-play-icon').className = 'fa-solid fa-play';
+            document.getElementById('trial-play-text').textContent = 'Putar Audio Ayat';
+        };
+
+        function nextTrialAyah() {
+            const surah = TRIAL_DATA[trialCurrentSurah];
+            trialCurrentAyahIdx = (trialCurrentAyahIdx + 1) % surah.ayahs.length;
+            updateTrialAyahDisplay();
+        }
+
+        function prevTrialAyah() {
+            const surah = TRIAL_DATA[trialCurrentSurah];
+            trialCurrentAyahIdx = (trialCurrentAyahIdx - 1 + surah.ayahs.length) % surah.ayahs.length;
+            updateTrialAyahDisplay();
+        }
+
+        function toggleBlindTest() {
+            isBlindTestActive = !isBlindTestActive;
+            const arab = document.getElementById('trial-arabic-text');
+            const indo = document.getElementById('trial-translation-text');
+            const btnText = document.getElementById('blind-test-text');
+            const btnIcon = document.getElementById('blind-test-icon');
+
+            if (isBlindTestActive) {
+                arab.classList.add('blur-lg', 'select-none', 'opacity-30');
+                indo.classList.add('blur-sm', 'select-none', 'opacity-40');
+                btnText.textContent = 'Buka Kembali Teks (Blind Test Aktif)';
+                btnIcon.className = 'fa-solid fa-eye';
+            } else {
+                arab.classList.remove('blur-lg', 'select-none', 'opacity-30');
+                indo.classList.remove('blur-sm', 'select-none', 'opacity-40');
+                btnText.textContent = 'Aktifkan Blind Test (Tutup Teks)';
+                btnIcon.className = 'fa-solid fa-eye-slash';
+            }
+        }
+
+        function simulateSetoran() {
+            const surah = TRIAL_DATA[trialCurrentSurah];
+            document.getElementById('sim-materi').textContent = `QS. ${surah.nama} : Ayat 1 s/d ${surah.ayahs.length}`;
+            document.getElementById('modal-simulasi-setoran').classList.remove('hidden');
+        }
+
+        function closeSimulasiSetoran() {
+            document.getElementById('modal-simulasi-setoran').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
