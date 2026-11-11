@@ -703,6 +703,72 @@ if (!in_array($activeTab, ['santri', 'admin', 'laporan', 'teknis', 'faq'], true)
 
     </div>
 
+    <!-- Kartu Informasi Pengembang, Doa Hafidz & Lisensi ChatTutor -->
+    <div class="bg-gradient-to-br from-emerald-900 via-slate-900 to-teal-950 text-white rounded-3xl p-6 sm:p-8 shadow-xl border border-emerald-500/20 space-y-6">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/10 pb-5">
+            <div class="flex items-center gap-3.5">
+                <div class="w-12 h-12 rounded-2xl bg-white/10 backdrop-blur border border-white/20 flex items-center justify-center text-amber-300 text-2xl shadow-inner flex-shrink-0">
+                    <i class="fa-solid fa-book-quran"></i>
+                </div>
+                <div>
+                    <span class="inline-block text-[10px] font-extrabold uppercase tracking-widest bg-amber-400 text-amber-950 px-2.5 py-0.5 rounded-full mb-1">
+                        Wakaf Digital & Amal Jariyah
+                    </span>
+                    <h3 class="text-xl font-extrabold tracking-tight">SIM Tahfidz Qur'an & Player Tikrar</h3>
+                    <p class="text-xs text-emerald-200 mt-0.5">Diberdayakan secara penuh oleh ChatTutor.id & WebSchool.id</p>
+                </div>
+            </div>
+            <button type="button" onclick="openModalInfoChatTutor()" class="self-start md:self-auto bg-amber-400 hover:bg-amber-300 text-amber-950 font-extrabold px-4 py-2 rounded-xl text-xs shadow-md transition-all flex items-center gap-2 cursor-pointer">
+                <i class="fa-solid fa-circle-info"></i> Buka Informasi Lengkap
+            </button>
+        </div>
+
+        <!-- Doa Terbaik & Larangan Jual Beli -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="p-4 rounded-2xl bg-white/10 border border-white/10 text-emerald-100">
+                <div class="flex items-center gap-2 text-xs font-bold text-amber-300 uppercase tracking-wider mb-2">
+                    <i class="fa-solid fa-heart text-rose-400"></i> Doa Terbaik untuk Santri
+                </div>
+                <p class="text-xs leading-relaxed italic">
+                    "Doa terbaik semoga ananda dan seluruh santri menjadi Hafidz & Hafidzah Al-Qur'an yang mutqin, berakhlak mulia, cerdas, dan istiqomah. Lanjutkan perjuangan mulia menjaga kalamullah!"
+                </p>
+            </div>
+            <div class="p-4 rounded-2xl bg-rose-950/60 border border-rose-500/40 text-rose-200">
+                <div class="flex items-center gap-2 text-xs font-extrabold text-rose-300 uppercase tracking-wider mb-2">
+                    <i class="fa-solid fa-ban text-rose-400"></i> Lisensi Wakaf Gratis
+                </div>
+                <p class="text-xs leading-relaxed font-semibold">
+                    <b class="text-white">DILARANG KERAS MEMPERJUALBELIKAN APLIKASI INI!</b><br>
+                    Aplikasi ini adalah <b>MURNI GRATIS DARI CHATTUTOR</b> untuk pondok pesantren, rumah tahfidz, masjid, sekolah, dan seluruh kaum muslimin.
+                </p>
+            </div>
+        </div>
+
+        <!-- Kanal ChatTutor & Kontak WhatsApp -->
+        <div class="flex flex-wrap items-center justify-between gap-4 pt-2">
+            <div class="flex flex-wrap items-center gap-3 text-xs">
+                <a href="https://chattutor.id" target="_blank" class="text-emerald-300 hover:underline flex items-center gap-1 font-bold">
+                    <i class="fa-solid fa-globe"></i> chattutor.id
+                </a>
+                <span>•</span>
+                <a href="https://webschool.id" target="_blank" class="text-teal-300 hover:underline flex items-center gap-1 font-bold">
+                    <i class="fa-solid fa-graduation-cap"></i> webschool.id
+                </a>
+                <span>•</span>
+                <a href="https://www.youtube.com/results?search_query=chattutor" target="_blank" class="text-rose-300 hover:underline flex items-center gap-1 font-bold">
+                    <i class="fa-brands fa-youtube"></i> YouTube ChatTutor
+                </a>
+                <span>•</span>
+                <a href="https://www.facebook.com/search/top?q=chattutor" target="_blank" class="text-blue-300 hover:underline flex items-center gap-1 font-bold">
+                    <i class="fa-brands fa-facebook"></i> Facebook ChatTutor
+                </a>
+            </div>
+            <a href="https://wa.me/628975775046?text=Halo%20ChatTutor,%20saya%20pengguna%20Aplikasi%20SIM%20Tahfidz%20Quran" target="_blank" class="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold px-3.5 py-1.5 rounded-xl text-xs transition-all shadow-sm">
+                <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp: 0897 5775 046
+            </a>
+        </div>
+    </div>
+
 </div>
 
 <!-- JavaScript untuk Penggantian Tab Panduan -->

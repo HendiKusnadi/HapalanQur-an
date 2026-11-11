@@ -8,7 +8,9 @@
 *.bak
 
 # Environment & Editor Files
+/php/
 .vscode/
 .idea/
 .DS_Store
 Thumbs.db
+

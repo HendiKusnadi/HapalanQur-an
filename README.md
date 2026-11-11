@@ -210,3 +210,38 @@ Menu khusus di halaman **Laporan Santri** (`index.php?page=laporan_santri`):
 4. **Menyimpan**:
    - Klik **Simpan & Proses Otomatis**. Notifikasi langsung mengonfirmasi penambahan atau pengurangan hafalan secara instan.
 
+---
+
+## 🚀 Portabilitas & Menjalankan Tanpa Install PHP (Portable App)
+
+Aplikasi ini telah dilengkapi dengan **PHP 8.3 Portable** di dalam subfolder `php/`:
+- **Tidak perlu instalasi PHP / XAMPP / Laragon di laptop tujuan**.
+- **Tinggal Copy & Pakai**: Cukup salin seluruh folder ini ke laptop lain atau Flashdisk.
+- **Cara Menjalankan**:
+  - Double-click **`run.bat`** (atau **`Buka-Aplikasi.vbs`** untuk menjalankan tanpa jendela hitam CMD).
+  - Browser otomatis membuka `http://localhost:8080`.
+  - Untuk mematikan server setelah selesai, double-click **`Stop-Aplikasi.bat`**.
+
+---
+
+## ℹ️ Informasi Pengembang, Doa Santri & Lisensi Wakaf Gratis
+
+### 🤲 Doa Terbaik untuk Seluruh Santri & Penghafal Qur'an
+> *"Doa terbaik semoga ananda dan seluruh santri menjadi Hafidz & Hafidzah Al-Qur'an yang mutqin, berakhlak mulia, cerdas, serta istiqomah. Lanjutkan dan teruskan perjuangan mulia menjaga kalamullah!"*
+
+---
+
+### 🛑 PERINGATAN KERAS LISENSI
+> ### **DILARANG KERAS MEMPERJUALBELIKAN APLIKASI INI!**
+> **APLIKASI INI MURNI 100% GRATIS DARI CHATTUTOR** untuk kemaslahatan pondok pesantren, rumah tahfidz, sekolah Islam, ustadz, dan para santri di mana pun berada sebagai amal jariyah dan dakwah digital. Tidak diperkenankan untuk dikomersialkan dalam bentuk apa pun.
+
+---
+
+### 🌐 Kanal Resmi ChatTutor & Layanan Bantuan
+- **Website Resmi**: [https://chattutor.id](https://chattutor.id)
+- **Platform Sekolah Digital**: [https://webschool.id](https://webschool.id)
+- **YouTube**: [YouTube ChatTutor](https://www.youtube.com/results?search_query=chattutor)
+- **Facebook**: [Facebook ChatTutor](https://www.facebook.com/search/top?q=chattutor)
+- **WhatsApp & Layanan Resmi**: **0897 5775 046** ([Chat WhatsApp Langsung](https://wa.me/628975775046?text=Halo%20ChatTutor,%20saya%20pengguna%20Aplikasi%20SIM%20Tahfidz%20Quran))
+
+

@@ -191,6 +191,12 @@ if (!isset($baseUrl)) {
                             <span>Panduan</span>
                         </a>
 
+                        <!-- Tombol Icon Info ChatTutor -->
+                        <button type="button" onclick="openModalInfoChatTutor()" class="px-3 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-1.5 bg-amber-400/25 text-amber-300 hover:bg-amber-400/35 border border-amber-300/40 shadow-xs" title="Tentang ChatTutor, Doa Hafidz, & Lisensi Gratis">
+                            <i class="fa-solid fa-circle-info text-amber-300 text-base"></i>
+                            <span>Info</span>
+                        </button>
+
                         <!-- User Profile Badge & Logout -->
                         <div class="flex items-center gap-2 pl-2 border-l border-white/20 ml-2">
                             <span class="text-xs font-bold text-emerald-100 flex items-center gap-1.5 bg-emerald-900/60 px-2.5 py-1.5 rounded-lg border border-emerald-500/30">
@@ -209,6 +215,12 @@ if (!isset($baseUrl)) {
                             <span>Panduan</span>
                         </a>
 
+                        <!-- Tombol Icon Info ChatTutor -->
+                        <button type="button" onclick="openModalInfoChatTutor()" class="px-3 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-1.5 bg-amber-400/25 text-amber-300 hover:bg-amber-400/35 border border-amber-300/40 shadow-xs" title="Tentang ChatTutor, Doa Hafidz, & Lisensi Gratis">
+                            <i class="fa-solid fa-circle-info text-amber-300 text-base"></i>
+                            <span>Info</span>
+                        </button>
+
                         <!-- Tombol Login Ustadz jika belum login -->
                         <a href="login" class="bg-amber-400 hover:bg-amber-300 text-amber-950 px-4 py-2 rounded-xl text-xs font-extrabold shadow-md transition-all flex items-center gap-1.5 active:scale-95">
                             <i class="fa-solid fa-lock"></i>
@@ -219,6 +231,9 @@ if (!isset($baseUrl)) {
 
                 <!-- Mobile Quick Action Button -->
                 <div class="flex items-center space-x-2 md:hidden">
+                    <button type="button" onclick="openModalInfoChatTutor()" class="bg-amber-400/25 border border-amber-300/40 text-amber-300 font-bold p-2 rounded-lg text-xs flex items-center justify-center" title="Informasi ChatTutor">
+                        <i class="fa-solid fa-circle-info text-sm"></i>
+                    </button>
                     <a href="panduan" class="bg-white/15 hover:bg-white/25 text-white font-bold p-2 rounded-lg text-xs flex items-center justify-center" title="Buku Panduan">
                         <i class="fa-solid fa-book-open"></i>
                     </a>

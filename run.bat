@@ -5,9 +5,16 @@ echo   SIM TAHFIDZ AL-QUR'AN - SETORAN & MUROJAAH OTOMATIS
 echo ========================================================
 echo.
 
-REM Deteksi file php.exe (Minimal PHP 8.3)
+REM Deteksi file php.exe (Prioritas: Portable PHP dalam folder aplikasi)
 set PHP_BIN=
 
+REM 1. Cek apakah ada PHP Portable di dalam folder aplikasi ini (php\php.exe)
+if exist "%~dp0php\php.exe" (
+    set "PHP_BIN=%~dp0php\php.exe"
+    goto FOUND_PHP
+)
+
+REM 2. Cek Laragon atau lokasi instalasi lokal
 if exist "E:\laragon\bin\php\php-8.3.20-Win32-vs16-x64\php.exe" (
     set "PHP_BIN=E:\laragon\bin\php\php-8.3.20-Win32-vs16-x64\php.exe"
     goto FOUND_PHP
