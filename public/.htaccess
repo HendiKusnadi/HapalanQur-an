@@ -1,0 +1,32 @@
+# ==============================================================
+# SIM Tahfidz Al-Qur'an - Apache URL Rewriting & Security
+# ==============================================================
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Sembunyikan direktori listing
+    Options -Indexes
+
+    # Cegah akses langsung ke file sensitif
+    <FilesMatch "\.(sqlite|sqlite3|db|env|log|git|md|lock)$">
+        Require all denied
+    </FilesMatch>
+
+    # Jika file fisik nyata ada (ikon, css, mp3, sw.js, manifest.json), sajikan langsung
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Arahkan seluruh rute bersih ke front controller index.php
+    RewriteRule ^ index.php [L,QSA]
+</IfModule>
+
+# Keamanan Ekstra HTTP Headers
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header unset X-Powered-By
+</IfModule>
+
