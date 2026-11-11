@@ -259,7 +259,7 @@ Aplikasi ini telah dilengkapi dengan **PHP 8.3 Portable** di dalam subfolder `ph
 - **Website Resmi**: [https://chattutor.id](https://chattutor.id)
 - **Platform Sekolah Digital**: [https://webschool.id](https://webschool.id)
 - **YouTube**: [YouTube ChatTutor](https://www.youtube.com/results?search_query=chattutor)
-- **Facebook**: [Facebook ChatTutor](https://www.facebook.com/search/top?q=chattutor)
+- **Facebook**: [Facebook ChatTutor](https://www.facebook.com/profile.php?id=61577896051895)
 - **WhatsApp & Layanan Resmi**: **0897 5775 046** ([Chat WhatsApp Langsung](https://wa.me/628975775046?text=Halo%20ChatTutor,%20saya%20pengguna%20Aplikasi%20SIM%20Tahfidz%20Quran))
 
 

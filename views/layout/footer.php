@@ -132,7 +132,7 @@
                         </a>
 
                         <!-- Facebook ChatTutor -->
-                        <a href="https://www.facebook.com/search/top?q=chattutor" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-xl bg-slate-50 hover:bg-blue-50/70 border border-slate-200 hover:border-blue-300 transition-all group">
+                        <a href="https://www.facebook.com/profile.php?id=61577896051895" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-xl bg-slate-50 hover:bg-blue-50/70 border border-slate-200 hover:border-blue-300 transition-all group">
                             <div class="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center text-base group-hover:scale-105 transition-transform flex-shrink-0 shadow-xs">
                                 <i class="fa-brands fa-facebook-f"></i>
                             </div>

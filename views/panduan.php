@@ -774,7 +774,7 @@ if (!in_array($activeTab, ['santri', 'admin', 'laporan', 'teknis', 'faq'], true)
                     <i class="fa-brands fa-youtube"></i> YouTube ChatTutor
                 </a>
                 <span>•</span>
-                <a href="https://www.facebook.com/search/top?q=chattutor" target="_blank" class="text-blue-300 hover:underline flex items-center gap-1 font-bold">
+                <a href="https://www.facebook.com/profile.php?id=61577896051895" target="_blank" class="text-blue-300 hover:underline flex items-center gap-1 font-bold">
                     <i class="fa-brands fa-facebook"></i> Facebook ChatTutor
                 </a>
             </div>
