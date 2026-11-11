@@ -520,16 +520,31 @@ if (!in_array($activeTab, ['santri', 'admin', 'laporan', 'teknis', 'faq'], true)
                     </div>
                     <div>
                         <span class="text-[10px] font-extrabold text-emerald-700 uppercase tracking-wider">Aplikasi HP Mandiri</span>
-                        <h4 class="font-extrabold text-slate-800 text-base">Cara Install Jadi Aplikasi HP (PWA / APK)</h4>
+                        <h4 class="font-extrabold text-slate-800 text-base">Cara Install Jadi Aplikasi HP (APK Mandiri & PWA)</h4>
                     </div>
                 </div>
                 <p class="text-xs text-slate-600 leading-relaxed">
-                    Aplikasi telah dilengkapi Service Worker dan Web App Manifest sehingga dapat langsung di-install di HP Android maupun iPhone tanpa perlu Google Play Store:
+                    Aplikasi ini dapat di-install di HP Android santri maupun ustadz dengan <b>database mandiri di HP masing-masing</b> (tinggal install, tinggal pakai tanpa perlu laptop/server menyala):
                 </p>
-                <ul class="text-xs text-slate-600 space-y-2 leading-relaxed">
-                    <li>• <b>Di Android (Google Chrome / Edge)</b>: Buka alamat web player di HP ➔ Ketuk ikon titik tiga di pojok kanan atas ➔ Pilih <b>"Tambahkan ke Layar Utama" (Install App)</b>. Ikon SIM Tahfidz akan muncul di layar utama HP seperti aplikasi APK native tanpa bilah URL peramban.</li>
-                    <li>• <b>Di iPhone / iPad (Safari)</b>: Buka alamat web di Safari ➔ Ketuk tombol <i>Share (Bagikan)</i> di bagian bawah ➔ Pilih <b>"Add to Home Screen" (Tambahkan ke Layar Utama)</b>.</li>
-                </ul>
+                <div class="space-y-3 text-xs text-slate-600">
+                    <div class="p-3.5 rounded-2xl bg-emerald-50/70 border border-emerald-200">
+                        <p class="font-bold text-emerald-900 mb-1 flex items-center gap-1.5">
+                            <i class="fa-solid fa-mobile-screen-button text-emerald-600"></i> Opsi 1: File APK Mandiri (Folder <code>android-app/</code>)
+                        </p>
+                        <p class="leading-relaxed">
+                            Source code Android mandiri telah tersedia di folder <code>android-app/</code>. Database tersimpan di memori internal HP (IndexedDB/LocalStorage). Anda dapat langsung mengonversinya menjadi file <b>.APK</b> menggunakan software <b>Website 2 APK Builder</b> di Windows atau upload <code>SIM-Tahfidz-Android.zip</code> (jalankan <code>Buat-Zip-APK.bat</code>) ke converter online gratis seperti <b>WebIntoApp.com</b>.
+                        </p>
+                    </div>
+                    <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200">
+                        <p class="font-bold text-slate-800 mb-1 flex items-center gap-1.5">
+                            <i class="fa-brands fa-chrome text-blue-600"></i> Opsi 2: Pasang Cepat Lewat Browser HP (PWA Tanpa Buat APK)
+                        </p>
+                        <ul class="space-y-1.5 leading-relaxed">
+                            <li>• <b>Di Android (Google Chrome / Edge)</b>: Buka alamat aplikasi di HP ➔ Ketuk ikon titik tiga di pojok kanan atas ➔ Pilih <b>"Tambahkan ke Layar Utama" (Install App)</b>.</li>
+                            <li>• <b>Di iPhone / iPad (Safari)</b>: Buka alamat di Safari ➔ Ketuk tombol <i>Share (Bagikan)</i> ➔ Pilih <b>"Add to Home Screen"</b>.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <!-- Card 3: Arsitektur URL Bersih (Clean URLs) -->

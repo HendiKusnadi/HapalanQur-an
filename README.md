@@ -212,6 +212,24 @@ Menu khusus di halaman **Laporan Santri** (`index.php?page=laporan_santri`):
 
 ---
 
+## 📱 Versi Android APK Mandiri (Database Mandiri di HP: Tinggal Install, Tinggal Pakai) [BARU ✨]
+
+Kini tersedia versi aplikasi mandiri khusus untuk smartphone **Android** di dalam folder **`android-app/`**:
+- **Database Mandiri (Per-HP Storage)**: Database tersimpan di memori internal masing-masing HP santri/ustadz menggunakan *Client-Side Local Database Engine (LocalStorage & IndexedDB)*. Tidak butuh server PHP, tidak butuh laptop, dan bekerja **100% OFFLINE**.
+- **Tinggal Install & Pakai**: Santri atau ustadz cukup menginstall file `.apk`, dan aplikasi langsung siap dipakai mencatat hafalan, tikrar audio, dan murojaah.
+- **Fitur Lengkap**: Player Tikrar Multi-Qari, Uji Hafalan (Blind Test), Rekam Suara Setoran, Form Setoran Otomatis (+ / - halaman), Murojaah Sabqi & Manzil, Rapor Capaian, serta Cadangkan & Pulihkan Database (Ekspor/Impor JSON).
+
+### Cara Menghasilkan File .APK:
+1. **Cara Tercepat (Online via WebIntoApp.com)**:
+   - Double-click file **`Buat-Zip-APK.bat`** di folder utama untuk menghasilkan file `SIM-Tahfidz-Android.zip`.
+   - Buka [https://www.webintoapp.com](https://www.webintoapp.com), pilih mode **HTML / Zip File**, upload `SIM-Tahfidz-Android.zip`, beri nama *SIM Tahfidz Quran*, dan download file `.apk`-nya.
+2. **Cara Offline (Website 2 APK Builder di Windows)**:
+   - Buka software *Website 2 APK Builder*.
+   - Pilih *Local Website Folder* ➔ Arahkan ke folder `android-app` ➔ Pilih icon `android-app/icons/icon-512.png` ➔ Klik **Generate APK**.
+3. **Panduan Lengkap**: Baca dokumen terperinci di [android-app/PANDUAN-BUAT-APK.md](file:///android-app/PANDUAN-BUAT-APK.md).
+
+---
+
 ## 🚀 Portabilitas & Menjalankan Tanpa Install PHP (Portable App)
 
 Aplikasi ini telah dilengkapi dengan **PHP 8.3 Portable** di dalam subfolder `php/`:

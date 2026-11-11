@@ -1,0 +1,22 @@
+{
+  "name": "SIM Tahfidz Qur'an - Mobile APK",
+  "short_name": "SIM Tahfidz",
+  "description": "Aplikasi Setoran Hafalan & Murojaah Mandiri Berbasis HP",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#064e3b",
+  "theme_color": "#065f46",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
